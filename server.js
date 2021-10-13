@@ -7,10 +7,13 @@ db.once('open' , function (){
     console.log(" ")
 });
 
+
+
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
 });
+
 
 const kittySchema = new mongoose.Schema({
   desc: String,
@@ -23,11 +26,11 @@ console.log("Press 3 to update tasks");
 console.log("Press 4 to delete tasks");
 readline.question('Option : ', opt => {
   
-  const Kitten = mongoose.model('node', kittySchema);
-  if(opt==="1"){
-  const fluffy = new Kitten({ desc: 'sid' , comp: true});
-  fluffy.save();
-  console.log("tasks are saved.")
+    const Kitten = mongoose.model('node', kittySchema);
+    if(opt==="1"){
+    const fluffy = new Kitten({ desc: 'sid' , comp: true});
+    fluffy.save();
+    console.log("tasks are saved.")
   }
   else if (opt==="2"){
     Kitten.find({comp : false},(err,res)=>{
@@ -36,13 +39,13 @@ readline.question('Option : ', opt => {
   }
   else if (opt==="4"){
     Kitten.deleteOne({
-      desc: "rupin"
+      desc: "sid"
     },()=> {
       console.log("deleted")
       });
   }
   else if(opt==="3"){
-    Kitten.findOneAndUpdate({desc:"sid"},{$set:{desc:"rupin vijan"}},function(err, doc){
+    Kitten.findOneAndUpdate({desc:"sid"},{$set:{desc:"sidharth"}},function(err, doc){
       if(err){
           console.log("Something wrong when updating data!");
       }

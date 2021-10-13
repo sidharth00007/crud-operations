@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon":"nodemon server.js",
     "start": "node server.js"
   },
   "author": "Sidharth",
@@ -12,7 +12,9 @@
   "dependencies": {
     "express": "^4.17.1",
     "mogoose": "0.0.1-security",
-    "mongoose": "^6.0.10",
+    "mongoose": "^6.0.10"
+  },
+  "devDependencies": {
     "nodemon": "^2.0.13"
   }
 }
